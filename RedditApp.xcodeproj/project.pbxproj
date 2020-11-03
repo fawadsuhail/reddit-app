@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		5971CEA525521CC100EF196B /* RedditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CEA425521CC100EF196B /* RedditAppTests.swift */; };
 		5971CEB025521CC100EF196B /* RedditAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CEAF25521CC100EF196B /* RedditAppUITests.swift */; };
 		59FF165E2552205400E6F658 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FF165D2552205400E6F658 /* AppCoordinator.swift */; };
+		59FF1669255221CB00E6F658 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 59FF1668255221CB00E6F658 /* Promises */; };
+		59FF166B255221CB00E6F658 /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 59FF166A255221CB00E6F658 /* PromisesTestHelpers */; };
+		59FF16712552220F00E6F658 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 59FF16702552220F00E6F658 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FF16712552220F00E6F658 /* SDWebImage in Frameworks */,
+				59FF166B255221CB00E6F658 /* PromisesTestHelpers in Frameworks */,
+				59FF1669255221CB00E6F658 /* Promises in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +162,11 @@
 			dependencies = (
 			);
 			name = RedditApp;
+			packageProductDependencies = (
+				59FF1668255221CB00E6F658 /* Promises */,
+				59FF166A255221CB00E6F658 /* PromisesTestHelpers */,
+				59FF16702552220F00E6F658 /* SDWebImage */,
+			);
 			productName = RedditApp;
 			productReference = 5971CE8A25521CC000EF196B /* RedditApp.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +238,10 @@
 				Base,
 			);
 			mainGroup = 5971CE8125521CBF00EF196B;
+			packageReferences = (
+				59FF1667255221CB00E6F658 /* XCRemoteSwiftPackageReference "promises" */,
+				59FF166F2552220F00E6F658 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 5971CE8B25521CC000EF196B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -595,6 +610,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59FF1667255221CB00E6F658 /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises";
+			requirement = {
+				kind = exactVersion;
+				version = 1.2.11;
+			};
+		};
+		59FF166F2552220F00E6F658 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59FF1668255221CB00E6F658 /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59FF1667255221CB00E6F658 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
+		};
+		59FF166A255221CB00E6F658 /* PromisesTestHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59FF1667255221CB00E6F658 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = PromisesTestHelpers;
+		};
+		59FF16702552220F00E6F658 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59FF166F2552220F00E6F658 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5971CE8225521CBF00EF196B /* Project object */;
 }
