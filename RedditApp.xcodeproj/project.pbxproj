@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5971CE8E25521CC000EF196B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CE8D25521CC000EF196B /* AppDelegate.swift */; };
-		5971CE9225521CC000EF196B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CE9125521CC000EF196B /* ViewController.swift */; };
 		5971CE9725521CC000EF196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5971CE9625521CC000EF196B /* Assets.xcassets */; };
 		5971CE9A25521CC000EF196B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5971CE9825521CC000EF196B /* LaunchScreen.storyboard */; };
 		5971CEA525521CC100EF196B /* RedditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CEA425521CC100EF196B /* RedditAppTests.swift */; };
 		5971CEB025521CC100EF196B /* RedditAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CEAF25521CC100EF196B /* RedditAppUITests.swift */; };
+		59FF165E2552205400E6F658 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FF165D2552205400E6F658 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 /* Begin PBXFileReference section */
 		5971CE8A25521CC000EF196B /* RedditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5971CE8D25521CC000EF196B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5971CE9125521CC000EF196B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5971CE9625521CC000EF196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5971CE9925521CC000EF196B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5971CE9B25521CC000EF196B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		5971CEAF25521CC100EF196B /* RedditAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAppUITests.swift; sourceTree = "<group>"; };
 		5971CEB125521CC100EF196B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59FF165425521EFB00E6F658 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		59FF165D2552205400E6F658 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				5971CE8D25521CC000EF196B /* AppDelegate.swift */,
-				5971CE9125521CC000EF196B /* ViewController.swift */,
 				5971CE9625521CC000EF196B /* Assets.xcassets */,
 				5971CE9825521CC000EF196B /* LaunchScreen.storyboard */,
 				5971CE9B25521CC000EF196B /* Info.plist */,
+				59FF165B2552203600E6F658 /* Coordinators */,
 			);
 			path = RedditApp;
 			sourceTree = "<group>";
@@ -122,6 +122,22 @@
 				5971CEB125521CC100EF196B /* Info.plist */,
 			);
 			path = RedditAppUITests;
+			sourceTree = "<group>";
+		};
+		59FF165B2552203600E6F658 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				59FF165C2552204500E6F658 /* App Coordinator */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		59FF165C2552204500E6F658 /* App Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				59FF165D2552205400E6F658 /* AppCoordinator.swift */,
+			);
+			path = "App Coordinator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5971CE9225521CC000EF196B /* ViewController.swift in Sources */,
+				59FF165E2552205400E6F658 /* AppCoordinator.swift in Sources */,
 				5971CE8E25521CC000EF196B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
