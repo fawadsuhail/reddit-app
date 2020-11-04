@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class ArticleListVC: UIViewController {
-    var presenter: ArticleListPresenter?
+class ArticleListVC: UIViewController, ArticleListViewable {
+    var presenter: ArticleListPresentable?
     private var cellViewModels = [ArticleListCellViewModel]()
 
     private lazy var tableView: UITableView = {
@@ -62,8 +62,8 @@ class ArticleListVC: UIViewController {
         activityIndicator.stopAnimating()
     }
 
-    func updateViewModels(cellViewModels: [ArticleListCellViewModel]) {
-        self.cellViewModels = cellViewModels
+    func updateViewModels(viewModels: [ArticleListCellViewModel]) {
+        self.cellViewModels = viewModels
         tableView.reloadData()
     }
 }
@@ -89,6 +89,7 @@ extension ArticleListVC: UITableViewDataSource {
 extension ArticleListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.didSelectArticle(with: cellViewModels[indexPath.row].id)
     }
 }
 

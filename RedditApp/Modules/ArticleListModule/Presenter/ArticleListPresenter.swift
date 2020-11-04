@@ -1,10 +1,10 @@
 import Foundation
 import Promises
 
-class ArticleListPresenter {
-    weak var view: ArticleListVC?
-    var interactor: ArticleListInteractor?
-    var router: ArticleListRouter?
+class ArticleListPresenter: ArticleListPresentable {
+    weak var view: ArticleListViewable?
+    var interactor: ArticleListInteractable?
+    var router: ArticleListRoutable?
     private var articles = [Article]()
 
     func viewLoaded() {
@@ -20,7 +20,14 @@ class ArticleListPresenter {
         let cellViewModels = articles.map({
             convertToArticleCellViewModel(article: $0)
         })
-        view?.updateViewModels(cellViewModels: cellViewModels)
+        view?.updateViewModels(viewModels: cellViewModels)
+    }
+
+    func didSelectArticle(with id: String) {
+        guard let article = articles.filter({ $0.id == id }).first else {
+            return
+        }
+        router?.showArticleDetail(with: article)
     }
 
     private func convertToArticleCellViewModel(article: Article) -> ArticleListCellViewModel {

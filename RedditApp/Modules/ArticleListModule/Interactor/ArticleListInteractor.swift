@@ -1,7 +1,7 @@
 import Foundation
 import Promises
 
-class ArticleListInteractor {
+class ArticleListInteractor: ArticleListInteractable {
     func fetchArticles() -> Promise<[Article]> {
         NetworkService().articles().then { response in
             response.data.children.map({
