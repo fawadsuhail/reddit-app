@@ -8,9 +8,9 @@ public enum NetworkError: String, Error {
 
 class NetworkService {
     func makeRequest<T: Decodable>(with urlRequest: URLRequestable, decodeType: T.Type) -> Promise<T> {
-        return sendRequest(with: urlRequest).then({ data in
+        return sendRequest(with: urlRequest).then { data in
             self.decode(modelType: T.self, from: data)
-        })
+        }
     }
     
     private func sendRequest(with urlRequest: URLRequestable) -> Promise<Data> {

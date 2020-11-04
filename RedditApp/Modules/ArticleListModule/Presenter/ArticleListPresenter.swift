@@ -8,7 +8,9 @@ class ArticleListPresenter {
     private var articles = [Article]()
 
     func viewLoaded() {
+        view?.showLoading()
         interactor?.fetchArticles().then { [weak self] articles in
+            self?.view?.hideLoading()
             self?.articles = articles
             self?.updateView()
         }

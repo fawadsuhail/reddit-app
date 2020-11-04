@@ -152,6 +152,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5952776825536AB400B3ACAC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		5971CE8125521CBF00EF196B = {
 			isa = PBXGroup;
 			children = (
@@ -208,23 +215,24 @@
 		59FF165B2552203600E6F658 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				59FF165C2552204500E6F658 /* App Coordinator */,
+				59FF165C2552204500E6F658 /* AppCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
-		59FF165C2552204500E6F658 /* App Coordinator */ = {
+		59FF165C2552204500E6F658 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
 				59FF165D2552205400E6F658 /* AppCoordinator.swift */,
 			);
-			path = "App Coordinator";
+			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
 		59FF167525522FF000E6F658 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				59FF167625522FFF00E6F658 /* ArticleListModule */,
+				5952776825536AB400B3ACAC /* New Group */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
