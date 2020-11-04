@@ -15,6 +15,9 @@
 		593AE0632552FEB400B301C7 /* ArticleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0622552FEB400B301C7 /* ArticleListRouter.swift */; };
 		593AE06A25530ADD00B301C7 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE06925530ADD00B301C7 /* Article.swift */; };
 		593AE0762553118000B301C7 /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0752553118000B301C7 /* ArticleListCell.swift */; };
+		593AE07D255316E500B301C7 /* ArticleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE07C255316E500B301C7 /* ArticleEndpoint.swift */; };
+		593AE08525531A6300B301C7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE08425531A6300B301C7 /* NetworkService.swift */; };
+		593AE08B25531BBA00B301C7 /* APIArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE08A25531BBA00B301C7 /* APIArticle.swift */; };
 		5971CE8E25521CC000EF196B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CE8D25521CC000EF196B /* AppDelegate.swift */; };
 		5971CE9725521CC000EF196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5971CE9625521CC000EF196B /* Assets.xcassets */; };
 		5971CE9A25521CC000EF196B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5971CE9825521CC000EF196B /* LaunchScreen.storyboard */; };
@@ -52,6 +55,9 @@
 		593AE0622552FEB400B301C7 /* ArticleListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRouter.swift; sourceTree = "<group>"; };
 		593AE06925530ADD00B301C7 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		593AE0752553118000B301C7 /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
+		593AE07C255316E500B301C7 /* ArticleEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEndpoint.swift; sourceTree = "<group>"; };
+		593AE08425531A6300B301C7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		593AE08A25531BBA00B301C7 /* APIArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIArticle.swift; sourceTree = "<group>"; };
 		5971CE8A25521CC000EF196B /* RedditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5971CE8D25521CC000EF196B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5971CE9625521CC000EF196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,8 +121,35 @@
 		593AE071255310E200B301C7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				593AE08925531BAF00B301C7 /* Models */,
+				593AE07B255316D000B301C7 /* Service */,
+				593AE07A255316C800B301C7 /* Endpoint */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		593AE07A255316C800B301C7 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				593AE07C255316E500B301C7 /* ArticleEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		593AE07B255316D000B301C7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				593AE08425531A6300B301C7 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		593AE08925531BAF00B301C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				593AE08A25531BBA00B301C7 /* APIArticle.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5971CE8125521CBF00EF196B = {
@@ -389,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59FF165E2552205400E6F658 /* AppCoordinator.swift in Sources */,
+				593AE07D255316E500B301C7 /* ArticleEndpoint.swift in Sources */,
 				5971CE8E25521CC000EF196B /* AppDelegate.swift in Sources */,
 				593AE0762553118000B301C7 /* ArticleListCell.swift in Sources */,
 				593AE06A25530ADD00B301C7 /* Article.swift in Sources */,
@@ -397,6 +431,8 @@
 				593AE0592552FE9A00B301C7 /* ArticleListPresenter.swift in Sources */,
 				593AE04C2552FE7E00B301C7 /* ArticleListBuilder.swift in Sources */,
 				593AE05E2552FEA600B301C7 /* ArticleListInteractor.swift in Sources */,
+				593AE08525531A6300B301C7 /* NetworkService.swift in Sources */,
+				593AE08B25531BBA00B301C7 /* APIArticle.swift in Sources */,
 				593AE0472552FE7000B301C7 /* ArticleListContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
