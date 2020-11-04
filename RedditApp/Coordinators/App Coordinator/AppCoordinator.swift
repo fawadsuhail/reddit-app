@@ -8,7 +8,7 @@ class AppCoordinator {
     }()
 
     private lazy var mainNavigationController: UINavigationController = {
-        let rootViewController = UIViewController()
+        let rootViewController = ArticleListBuilder().buildModule()
         let navigationController = UINavigationController(rootViewController: rootViewController)
         return navigationController
     }()
