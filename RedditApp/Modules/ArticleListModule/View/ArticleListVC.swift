@@ -12,6 +12,8 @@ class ArticleListVC: UIViewController {
                            forCellReuseIdentifier: ArticleListCell.reuseIdentifier())
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = 200.0
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
 

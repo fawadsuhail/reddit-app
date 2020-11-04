@@ -13,7 +13,7 @@ class ArticleListCell: UITableViewCell {
         let subview = UILabel()
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.textColor = .black
-        subview.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        subview.font = UIFont.preferredFont(forTextStyle: .headline)
         subview.textAlignment = .natural
         subview.numberOfLines = 0
         return subview
@@ -23,8 +23,12 @@ class ArticleListCell: UITableViewCell {
         let subview = UIImageView()
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.contentMode = .scaleAspectFit
-        subview.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-        subview.widthAnchor.constraint(equalToConstant: 200.0).isActive = true
+        let heightConstraint = subview.heightAnchor.constraint(equalToConstant: 100.0)
+        heightConstraint.priority = .defaultLow
+        heightConstraint.isActive = true
+        let widthConstraint = widthAnchor.constraint(equalToConstant: 200.0)
+        widthConstraint.priority = .defaultLow
+        widthConstraint.isActive = true
         return subview
     }()
 
@@ -33,11 +37,12 @@ class ArticleListCell: UITableViewCell {
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.axis = .vertical
         subview.spacing = 10.0
-        subview.alignment = .center
+        subview.distribution = .equalCentering
         return subview
     }()
 
     private func commonInit() {
+        accessoryType = .disclosureIndicator
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(thumbnailImageView)
 
