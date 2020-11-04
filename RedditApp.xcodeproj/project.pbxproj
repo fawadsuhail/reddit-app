@@ -13,6 +13,8 @@
 		593AE0592552FE9A00B301C7 /* ArticleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0582552FE9A00B301C7 /* ArticleListPresenter.swift */; };
 		593AE05E2552FEA600B301C7 /* ArticleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE05D2552FEA600B301C7 /* ArticleListInteractor.swift */; };
 		593AE0632552FEB400B301C7 /* ArticleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0622552FEB400B301C7 /* ArticleListRouter.swift */; };
+		593AE06A25530ADD00B301C7 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE06925530ADD00B301C7 /* Article.swift */; };
+		593AE0762553118000B301C7 /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0752553118000B301C7 /* ArticleListCell.swift */; };
 		5971CE8E25521CC000EF196B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971CE8D25521CC000EF196B /* AppDelegate.swift */; };
 		5971CE9725521CC000EF196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5971CE9625521CC000EF196B /* Assets.xcassets */; };
 		5971CE9A25521CC000EF196B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5971CE9825521CC000EF196B /* LaunchScreen.storyboard */; };
@@ -48,6 +50,8 @@
 		593AE0582552FE9A00B301C7 /* ArticleListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListPresenter.swift; sourceTree = "<group>"; };
 		593AE05D2552FEA600B301C7 /* ArticleListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListInteractor.swift; sourceTree = "<group>"; };
 		593AE0622552FEB400B301C7 /* ArticleListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRouter.swift; sourceTree = "<group>"; };
+		593AE06925530ADD00B301C7 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		593AE0752553118000B301C7 /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		5971CE8A25521CC000EF196B /* RedditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5971CE8D25521CC000EF196B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5971CE9625521CC000EF196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +95,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		593AE06725530ACF00B301C7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				593AE06825530AD400B301C7 /* Models */,
+				593AE071255310E200B301C7 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		593AE06825530AD400B301C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				593AE06925530ADD00B301C7 /* Article.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		593AE071255310E200B301C7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		5971CE8125521CBF00EF196B = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +147,7 @@
 				5971CE9625521CC000EF196B /* Assets.xcassets */,
 				5971CE9825521CC000EF196B /* LaunchScreen.storyboard */,
 				5971CE9B25521CC000EF196B /* Info.plist */,
+				593AE06725530ACF00B301C7 /* Core */,
 				59FF165B2552203600E6F658 /* Coordinators */,
 				59FF167525522FF000E6F658 /* Modules */,
 			);
@@ -184,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				593AE0532552FE8E00B301C7 /* ArticleListVC.swift */,
+				593AE0752553118000B301C7 /* ArticleListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,6 +390,8 @@
 			files = (
 				59FF165E2552205400E6F658 /* AppCoordinator.swift in Sources */,
 				5971CE8E25521CC000EF196B /* AppDelegate.swift in Sources */,
+				593AE0762553118000B301C7 /* ArticleListCell.swift in Sources */,
+				593AE06A25530ADD00B301C7 /* Article.swift in Sources */,
 				593AE0542552FE8E00B301C7 /* ArticleListVC.swift in Sources */,
 				593AE0632552FEB400B301C7 /* ArticleListRouter.swift in Sources */,
 				593AE0592552FE9A00B301C7 /* ArticleListPresenter.swift in Sources */,

@@ -3,10 +3,15 @@ import UIKit
 
 class ArticleListVC: UIViewController {
     var presenter: ArticleListPresenter?
+    private var cellViewModels = [ArticleListCellViewModel]()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(ArticleListCell.self,
+                           forCellReuseIdentifier: ArticleListCell.reuseIdentifier())
+        tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -54,4 +59,34 @@ class ArticleListVC: UIViewController {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }
+
+    func updateViewModels(cellViewModels: [ArticleListCellViewModel]) {
+        self.cellViewModels = cellViewModels
+        tableView.reloadData()
+    }
 }
+
+extension ArticleListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellViewModels.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ArticleListCell.reuseIdentifier(),
+            for: indexPath) as? ArticleListCell else {
+            return UITableViewCell()
+        }
+
+        let viewModel = cellViewModels[indexPath.row]
+        cell.update(with: viewModel)
+        return cell
+    }
+}
+
+extension ArticleListVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
