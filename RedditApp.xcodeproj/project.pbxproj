@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		593AE0472552FE7000B301C7 /* ArticleListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0462552FE7000B301C7 /* ArticleListContract.swift */; };
 		593AE04C2552FE7E00B301C7 /* ArticleListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE04B2552FE7E00B301C7 /* ArticleListBuilder.swift */; };
 		593AE0542552FE8E00B301C7 /* ArticleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0532552FE8E00B301C7 /* ArticleListVC.swift */; };
 		593AE0592552FE9A00B301C7 /* ArticleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE0582552FE9A00B301C7 /* ArticleListPresenter.swift */; };
@@ -50,7 +49,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		593AE0462552FE7000B301C7 /* ArticleListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListContract.swift; sourceTree = "<group>"; };
 		593AE04B2552FE7E00B301C7 /* ArticleListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListBuilder.swift; sourceTree = "<group>"; };
 		593AE0532552FE8E00B301C7 /* ArticleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListVC.swift; sourceTree = "<group>"; };
 		593AE0582552FE9A00B301C7 /* ArticleListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListPresenter.swift; sourceTree = "<group>"; };
@@ -161,7 +159,7 @@
 		5952776825536AB400B3ACAC /* ArticleDetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				5952777725536F3100B3ACAC /* Builder */,
+				5952778A2553706300B3ACAC /* ArticleDetailBuilder.swift */,
 				5952777525536F2100B3ACAC /* Presenter */,
 				5952777425536F1C00B3ACAC /* View */,
 			);
@@ -182,14 +180,6 @@
 				595277802553704D00B3ACAC /* ArticleDetailPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		5952777725536F3100B3ACAC /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				5952778A2553706300B3ACAC /* ArticleDetailBuilder.swift */,
-			);
-			path = Builder;
 			sourceTree = "<group>";
 		};
 		5971CE8125521CBF00EF196B = {
@@ -273,8 +263,7 @@
 		59FF167625522FFF00E6F658 /* ArticleListModule */ = {
 			isa = PBXGroup;
 			children = (
-				593AE0462552FE7000B301C7 /* ArticleListContract.swift */,
-				59FF167B255230E100E6F658 /* Builder */,
+				593AE04B2552FE7E00B301C7 /* ArticleListBuilder.swift */,
 				59FF167A255230DB00E6F658 /* Router */,
 				59FF1679255230D300E6F658 /* Interactor */,
 				59FF1678255230CC00E6F658 /* Presenter */,
@@ -314,14 +303,6 @@
 				593AE0622552FEB400B301C7 /* ArticleListRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		59FF167B255230E100E6F658 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				593AE04B2552FE7E00B301C7 /* ArticleListBuilder.swift */,
-			);
-			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,7 +458,6 @@
 				593AE05E2552FEA600B301C7 /* ArticleListInteractor.swift in Sources */,
 				593AE08525531A6300B301C7 /* NetworkService.swift in Sources */,
 				593AE08B25531BBA00B301C7 /* APIArticle.swift in Sources */,
-				593AE0472552FE7000B301C7 /* ArticleListContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

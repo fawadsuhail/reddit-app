@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class ArticleListRouter: ArticleListRoutable {
+class ArticleListRouter {
     weak var view: UIViewController?
 
     func showArticleDetail(with article: Article) {

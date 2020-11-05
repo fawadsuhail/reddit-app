@@ -1,10 +1,10 @@
 import Foundation
 import Promises
 
-class ArticleListPresenter: ArticleListPresentable {
-    weak var view: ArticleListViewable?
-    var interactor: ArticleListInteractable?
-    var router: ArticleListRoutable?
+class ArticleListPresenter {
+    weak var view: ArticleListVC?
+    var interactor: ArticleListInteractor?
+    var router: ArticleListRouter?
     private var articles = [Article]()
 
     func viewLoaded() {

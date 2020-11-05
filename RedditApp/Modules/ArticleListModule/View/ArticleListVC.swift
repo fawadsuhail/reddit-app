@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class ArticleListVC: UIViewController, ArticleListViewable {
-    var presenter: ArticleListPresentable?
+class ArticleListVC: UIViewController {
+    var presenter: ArticleListPresenter?
     private var cellViewModels = [ArticleListCellViewModel]()
 
     private lazy var tableView: UITableView = {
