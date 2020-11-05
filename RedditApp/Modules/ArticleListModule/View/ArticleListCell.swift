@@ -32,6 +32,8 @@ class ArticleListCell: UITableViewCell {
         subview.axis = .vertical
         subview.spacing = 10.0
         subview.distribution = .equalSpacing
+        subview.isLayoutMarginsRelativeArrangement = true
+        subview.layoutMargins = UIEdgeInsets(top: 10.0, left: 16.0, bottom: 10.0, right: 10.0)
         return subview
     }()
 
@@ -43,10 +45,10 @@ class ArticleListCell: UITableViewCell {
         contentView.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.0),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.0),
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10.0),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10.0)
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0.0),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0.0),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0.0),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0.0)
         ])
     }
 

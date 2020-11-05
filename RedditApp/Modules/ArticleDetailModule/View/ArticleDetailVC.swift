@@ -24,12 +24,9 @@ class ArticleDetailVC: UIViewController {
         let subview = UIStackView()
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.axis = .vertical
-        subview.spacing = 20.0
+        subview.spacing = 10.0
         subview.isLayoutMarginsRelativeArrangement = true
-        subview.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20.0,
-                                                                   leading: 20.0,
-                                                                   bottom: 20.0,
-                                                                   trailing: 20.0)
+        subview.layoutMargins = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
         return subview
     }()
 
