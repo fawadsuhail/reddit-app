@@ -67,15 +67,9 @@ class ArticleListVC: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animate(alongsideTransition: { _ in
-            print("some animation")
-        }, completion: { _ in
+        coordinator.animate(alongsideTransition: nil, completion: { _ in
             self.tableView.reloadData()
         })
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
 }
 

@@ -10,10 +10,21 @@ class ArticleListPresenter {
     func viewLoaded() {
         view?.showLoading()
         interactor?.fetchArticles().then { [weak self] articles in
-            self?.view?.hideLoading()
             self?.articles = articles
             self?.updateView()
+        }.catch { [weak self] error in
+            self?.handleError(with: error)
+        }.always { [weak self] in
+            self?.view?.hideLoading()
         }
+    }
+
+    func handleError(with error: Error) {
+        guard let networkError = error as? NetworkError else {
+            router?.showErrorAlert(with: "An error occurred")
+            return
+        }
+        router?.showErrorAlert(with: networkError.rawValue)
     }
 
     func updateView() {

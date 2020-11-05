@@ -16,7 +16,7 @@ class ArticleDetailPresenter {
     private func convertToArticleDetailViewModel(article: Article) -> ArticleDetailViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .short
         return ArticleDetailViewModel(viewTitle: article.title,
                                       title: article.title,
                                       selftext: article.selftext,
