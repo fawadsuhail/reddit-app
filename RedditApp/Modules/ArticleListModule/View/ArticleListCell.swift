@@ -23,12 +23,6 @@ class ArticleListCell: UITableViewCell {
         let subview = UIImageView()
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.contentMode = .scaleAspectFit
-        let heightConstraint = subview.heightAnchor.constraint(equalToConstant: 100.0)
-        heightConstraint.priority = .defaultLow
-        heightConstraint.isActive = true
-        let widthConstraint = widthAnchor.constraint(equalToConstant: 200.0)
-        widthConstraint.priority = .defaultLow
-        widthConstraint.isActive = true
         return subview
     }()
 
@@ -37,7 +31,7 @@ class ArticleListCell: UITableViewCell {
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.axis = .vertical
         subview.spacing = 10.0
-        subview.distribution = .equalCentering
+        subview.distribution = .equalSpacing
         return subview
     }()
 
@@ -66,12 +60,18 @@ class ArticleListCell: UITableViewCell {
         commonInit()
     }
 
-    func update(with viewModel: ArticleListCellViewModel) {
+    func update(with viewModel: ArticleListCellViewModel, completion: (() -> Void)?) {
         titleLabel.text = viewModel.title
-        if let thumbnailString = viewModel.thumbnail,
-           let url = URL(string: thumbnailString) {
+        if let thumbnailString = viewModel.thumbnail {
             thumbnailImageView.isHidden = false
-            thumbnailImageView.sd_setImage(with: url, completed: nil)
+            if let image = SDImageCache.shared.imageFromCache(forKey: thumbnailString) {
+                thumbnailImageView.image = image
+            } else {
+                // need to call completion to trigger a reload for the cell to resize
+                thumbnailImageView.sd_setImage(with: URL(string: thumbnailString), completed: { _,_,_,_ in
+                    completion?()
+                })
+            }
         } else {
             thumbnailImageView.isHidden = true
         }

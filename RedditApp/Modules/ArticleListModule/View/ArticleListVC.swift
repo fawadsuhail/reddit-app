@@ -10,10 +10,10 @@ class ArticleListVC: UIViewController, ArticleListViewable {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ArticleListCell.self,
                            forCellReuseIdentifier: ArticleListCell.reuseIdentifier())
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 300.0
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 200.0
-        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
 
@@ -66,6 +66,19 @@ class ArticleListVC: UIViewController, ArticleListViewable {
         self.cellViewModels = viewModels
         tableView.reloadData()
     }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            print("some animation")
+        }, completion: { _ in
+            self.tableView.reloadData()
+        })
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 extension ArticleListVC: UITableViewDataSource {
@@ -81,8 +94,14 @@ extension ArticleListVC: UITableViewDataSource {
         }
 
         let viewModel = cellViewModels[indexPath.row]
-        cell.update(with: viewModel)
+        cell.update(with: viewModel, completion: { [weak self] in
+            self?.reloadCell(for: indexPath)
+        })
         return cell
+    }
+
+    func reloadCell(for indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 

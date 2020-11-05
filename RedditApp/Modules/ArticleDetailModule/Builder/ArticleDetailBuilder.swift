@@ -9,6 +9,7 @@ class ArticleDetailBuilder {
 
         view.presenter = presenter
         presenter.interactor = interactor
+        presenter.view = view
 
         return view
     }
