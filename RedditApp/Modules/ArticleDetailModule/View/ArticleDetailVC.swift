@@ -25,7 +25,7 @@ class ArticleDetailVC: UIViewController {
         subview.axis = .vertical
         subview.spacing = 10.0
         subview.isLayoutMarginsRelativeArrangement = true
-        subview.layoutMargins = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+        subview.layoutMargins = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0)
         return subview
     }()
 

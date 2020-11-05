@@ -12,6 +12,7 @@ class ArticleListInteractor {
 
     private func mapToArticle(apiArticle: APIArticle) -> Article {
         var thumbnail: String?
+        // reddit api doesn't return a valid link for some posts
         if let thumbnailUrlString = apiArticle.thumbnail,
            thumbnailUrlString.contains("https://") {
             thumbnail = apiArticle.thumbnail
