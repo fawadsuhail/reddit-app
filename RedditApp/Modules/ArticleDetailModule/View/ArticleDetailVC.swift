@@ -1,8 +1,18 @@
 import Foundation
 import UIKit
+import SDWebImage
+
+struct ArticleDetailViewModel {
+    var viewTitle: String
+    var title: String
+    var selftext: String?
+    var thumbnail: String?
+    var commentText: String?
+    var dateText: String
+}
 
 class ArticleDetailVC: UIViewController {
-    weak var presenter: ArticleDetailPresenter?
+    var presenter: ArticleDetailPresenter?
 
     private lazy var scrollView: UIScrollView = {
         let subview = UIScrollView()
@@ -14,6 +24,12 @@ class ArticleDetailVC: UIViewController {
         let subview = UIStackView()
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.axis = .vertical
+        subview.spacing = 20.0
+        subview.isLayoutMarginsRelativeArrangement = true
+        subview.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20.0,
+                                                                   leading: 20.0,
+                                                                   bottom: 20.0,
+                                                                   trailing: 20.0)
         return subview
     }()
 
@@ -21,19 +37,47 @@ class ArticleDetailVC: UIViewController {
         let subview = UIImageView()
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.contentMode = .scaleAspectFit
-        let heightConstraint = subview.heightAnchor.constraint(equalToConstant: 100.0)
-        heightConstraint.priority = .defaultLow
-        heightConstraint.isActive = true
-        let widthConstraint = subview.widthAnchor.constraint(equalToConstant: 200.0)
-        widthConstraint.priority = .defaultLow
-        widthConstraint.isActive = true
         return subview
     }()
     
+    private lazy var titleLabel: UILabel = {
+        let subview = UILabel()
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.textColor = .black
+        subview.font = UIFont.preferredFont(forTextStyle: .headline)
+        subview.textAlignment = .natural
+        subview.numberOfLines = 0
+        return subview
+    }()
+
+    private lazy var descriptionLabel: UILabel = {
+        let subview = UILabel()
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.textColor = .black
+        subview.font = UIFont.preferredFont(forTextStyle: .body)
+        subview.textAlignment = .natural
+        subview.numberOfLines = 0
+        return subview
+    }()
+
+    private lazy var dateLabel: UILabel = {
+        let subview = UILabel()
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.textColor = .black
+        subview.font = UIFont.preferredFont(forTextStyle: .caption1)
+        subview.textAlignment = .natural
+        subview.numberOfLines = 0
+        return subview
+    }()
 
     override func loadView() {
         view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = .white
+
+        scrollStackView.addArrangedSubview(imageView)
+        scrollStackView.addArrangedSubview(titleLabel)
+        scrollStackView.addArrangedSubview(dateLabel)
+        scrollStackView.addArrangedSubview(descriptionLabel)
 
         scrollView.addSubview(scrollStackView)
         view.addSubview(scrollView)
@@ -55,5 +99,19 @@ class ArticleDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewLoaded()
+    }
+
+    func update(with viewModel: ArticleDetailViewModel) {
+        title = viewModel.viewTitle.removingPercentEncoding
+        if let thumbnail = viewModel.thumbnail {
+            imageView.isHidden = false
+            imageView.sd_setImage(with: URL(string: thumbnail), completed: nil)
+        } else {
+            imageView.isHidden = true
+        }
+        titleLabel.text = viewModel.title.removingPercentEncoding
+        dateLabel.text = viewModel.dateText
+        descriptionLabel.text = viewModel.selftext?.removingPercentEncoding
     }
 }
