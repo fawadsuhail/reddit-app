@@ -7,5 +7,3 @@ A simple reddit app that fetches data from the reddit API and displays it in a U
 I used `Promises` and `SDWebImage`
 Promises help me structure the code better and avoid nested blocks
 SDWebImage is used for image caching. 
-
-
