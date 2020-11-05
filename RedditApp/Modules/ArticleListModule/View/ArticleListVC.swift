@@ -10,8 +10,6 @@ class ArticleListVC: UIViewController, ArticleListViewable {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ArticleListCell.self,
                            forCellReuseIdentifier: ArticleListCell.reuseIdentifier())
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 300.0
         tableView.dataSource = self
         tableView.delegate = self
         return tableView

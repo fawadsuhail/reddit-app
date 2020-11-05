@@ -3,12 +3,10 @@ import Promises
 
 class ArticleListInteractor: ArticleListInteractable {
     func fetchArticles() -> Promise<[Article]> {
-        NetworkService().articles().then { response in
+        return NetworkService().articles().then { response in
             response.data.children.map({
                 self.mapToArticle(apiArticle: $0.data)
             })
-        }.catch { error in
-            print("the network error was \(error)")
         }
     }
 
@@ -23,7 +21,7 @@ class ArticleListInteractor: ArticleListInteractable {
                              selftext: apiArticle.selftext,
                              thumbnail: thumbnail,
                              numComments: apiArticle.numComments,
-                             createdUtc: apiArticle.createdUtc)
+                             createdUtc: Date(timeIntervalSince1970: apiArticle.createdUtc))
         return object
     }
 }

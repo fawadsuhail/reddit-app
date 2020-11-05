@@ -7,7 +7,6 @@ struct ArticleDetailViewModel {
     var title: String
     var selftext: String?
     var thumbnail: String?
-    var commentText: String?
     var dateText: String
 }
 
