@@ -79,6 +79,12 @@ class ArticleListCell: UITableViewCell {
         }
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        thumbnailImageView.image = nil
+    }
+
     static func reuseIdentifier() -> String {
         return "ArticleListCell"
     }
